@@ -77,14 +77,16 @@ h1{font-size:clamp(2.3rem,5.6vw,4.3rem);color:#fff;max-width:16ch;margin:0 auto;
 .exhibit.alt{background:var(--bg-raised)}
 .exhibit-body,.exhibit-label{max-width:1180px;margin:0 auto;padding:0 24px}
 .exhibit{padding-block:68px}
-.exhibit-label{display:flex;align-items:baseline;gap:18px;margin-bottom:34px;flex-wrap:wrap}
-.exhibit-tag{color:var(--amber);letter-spacing:.1em;font-size:.72rem;text-transform:uppercase;white-space:nowrap}
-.exhibit-label h2{font-size:clamp(1.5rem,3vw,2.1rem);color:var(--ink)}
+.exhibit-label{display:flex;align-items:center;gap:14px;margin-bottom:38px;flex-wrap:wrap}
+.exhibit-tag{color:var(--amber);letter-spacing:.06em;font-size:.82rem;white-space:nowrap;display:inline-flex;align-items:center;gap:12px}
+.exhibit-tag::before{content:'';width:30px;height:1px;background:var(--amber)}
+.exhibit-label h2{font-size:clamp(1.6rem,3.2vw,2.3rem);color:var(--ink)}
 .exhibit-intro{max-width:66ch;margin-bottom:30px}
 
-.doc-types{list-style:none;padding:0;margin:26px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px;max-width:56ch}
-.doc-types li{padding:12px 0;border-top:1px solid var(--line);color:var(--ink);font-size:.92rem}
-.fine-print{margin-top:28px;font-size:.78rem;color:var(--ink-dim);border-left:2px solid var(--gold-soft);padding-left:14px}
+.doc-types{list-style:none;padding:0;margin:28px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 32px;max-width:58ch}
+.doc-types li{display:flex;align-items:baseline;gap:12px;color:var(--ink);font-size:.95rem;line-height:1.4}
+.doc-types li::before{content:'';width:6px;height:6px;flex-shrink:0;margin-top:7px;background:var(--amber)}
+.fine-print{margin-top:30px;font-size:.78rem;color:var(--ink-dim);border-left:2px solid var(--gold-soft);padding-left:14px}
 
 .process{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:30px}
 .process li{display:flex;gap:16px;min-width:0}
@@ -93,9 +95,10 @@ h1{font-size:clamp(2.3rem,5.6vw,4.3rem);color:#fff;max-width:16ch;margin:0 auto;
 .process p{max-width:30ch;font-size:.92rem}
 
 .markets-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line)}
-.market-card{background:var(--bg);padding:30px 28px}
-.market-tag{display:inline-block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-soft);padding:4px 10px;margin-bottom:16px}
-.market-card h3{color:var(--ink);font-size:1.3rem;margin-bottom:10px}
+.market-card{background:var(--bg);padding:38px 32px;border-top:2px solid var(--gold-soft);transition:border-color .2s}
+.market-card:hover{border-top-color:var(--gold)}
+.market-tag{display:inline-block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-soft);padding:4px 10px;margin-bottom:18px}
+.market-card h3{color:var(--ink);font-size:1.4rem;margin-bottom:12px}
 
 /* ---------- FAQ ---------- */
 .faq-list{display:flex;flex-direction:column;gap:1px;background:var(--line);max-width:860px}
@@ -174,9 +177,9 @@ h1{font-size:clamp(2.3rem,5.6vw,4.3rem);color:#fff;max-width:16ch;margin:0 auto;
   </section>
 
   <section class="exhibit" id="who">
-    <div class="exhibit-label"><span class="exhibit-tag">Exhibit A</span><h2>Who we are</h2></div>
+    <div class="exhibit-label"><span class="exhibit-tag">01 — About</span><h2>Built to read what governments send you</h2></div>
     <div class="exhibit-body">
-      <p>Hartman &amp; Co LLC is a legal-technology company headquartered in Albuquerque, New Mexico, operating as part of the Specter &amp; Co Holdings group. We build software, not legal advice: our systems read government notices, regulatory assessments, and formal correspondence, and produce the written response each one calls for.</p>
+      <p>Hartman &amp; Co builds software that reads regulatory and administrative mail — fines, assessments, formal notices — and drafts the response each one requires, citing the rule it relied on. We're a software company, not a law firm: part of the Specter &amp; Co Holdings group, headquartered in Albuquerque, New Mexico.</p>
       <ul class="doc-types">
         <li>Government fines &amp; penalties</li>
         <li>Tax &amp; contribution assessments</li>
@@ -188,9 +191,9 @@ h1{font-size:clamp(2.3rem,5.6vw,4.3rem);color:#fff;max-width:16ch;margin:0 auto;
   </section>
 
   <section class="exhibit alt" id="what">
-    <div class="exhibit-label"><span class="exhibit-tag">Exhibit B</span><h2>What we do</h2></div>
+    <div class="exhibit-label"><span class="exhibit-tag">02 — How it works</span><h2>From notice to response, automatically</h2></div>
     <div class="exhibit-body">
-      <p class="exhibit-intro">Every document carries a rule, a deadline, and a set of facts. Our engine reads all three, matches them against the applicable provisions, and drafts the response — citing the specific rule it relied on, so nothing is a black box.</p>
+      <p class="exhibit-intro">Every notice carries a rule, a deadline, and a set of facts. Our engine reads all three, matches them against the applicable provisions, and drafts the response — citing exactly what it relied on, so nothing is a black box.</p>
       <ol class="process">
         <li><span class="step">01</span><div><h3>Submit</h3><p>Upload the notice, fine, or letter exactly as received.</p></div></li>
         <li><span class="step">02</span><div><h3>Analyze</h3><p>The system identifies the applicable rule, the deadline, and the available grounds for response.</p></div></li>
@@ -201,7 +204,7 @@ h1{font-size:clamp(2.3rem,5.6vw,4.3rem);color:#fff;max-width:16ch;margin:0 auto;
   </section>
 
   <section class="exhibit" id="markets">
-    <div class="exhibit-label"><span class="exhibit-tag">Exhibit C</span><h2>Markets</h2></div>
+    <div class="exhibit-label"><span class="exhibit-tag">03 — Markets</span><h2>Where we operate</h2></div>
     <div class="exhibit-body markets-grid">
       <div class="market-card">
         <span class="market-tag">Established</span>
@@ -217,7 +220,7 @@ h1{font-size:clamp(2.3rem,5.6vw,4.3rem);color:#fff;max-width:16ch;margin:0 auto;
   </section>
 
   <section class="exhibit alt" id="faq">
-    <div class="exhibit-label"><span class="exhibit-tag">Exhibit D</span><h2>Frequently asked</h2></div>
+    <div class="exhibit-label"><span class="exhibit-tag">04 — Questions</span><h2>Frequently asked</h2></div>
     <div class="exhibit-body">
       <div class="faq-list">
         <details class="faq-item">
@@ -249,7 +252,7 @@ h1{font-size:clamp(2.3rem,5.6vw,4.3rem);color:#fff;max-width:16ch;margin:0 auto;
   </section>
 
   <section class="exhibit alt" id="contact">
-    <div class="exhibit-label"><span class="exhibit-tag">Exhibit E</span><h2>Contact</h2></div>
+    <div class="exhibit-label"><span class="exhibit-tag">05 — Contact</span><h2>Get in touch</h2></div>
     <div class="exhibit-body contact-wrap">
       <div class="contact-info">
         <div>
