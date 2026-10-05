@@ -82,6 +82,8 @@ h1{font-size:clamp(2.3rem,5.6vw,4.3rem);color:#fff;max-width:16ch;margin:0 auto;
 .exhibit-tag::before{content:'';width:30px;height:1px;background:var(--amber)}
 .exhibit-label h2{font-size:clamp(1.6rem,3.2vw,2.3rem);color:var(--ink)}
 .exhibit-intro{max-width:66ch;margin-bottom:30px}
+.exhibit-body h3{font-size:1.05rem;color:var(--gold-bright);margin:34px 0 10px}
+.exhibit-body h3:first-of-type{margin-top:0}
 
 .doc-types{list-style:none;padding:0;margin:28px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 32px;max-width:58ch}
 .doc-types li{display:flex;align-items:baseline;gap:12px;color:var(--ink);font-size:.95rem;line-height:1.4}
@@ -91,18 +93,46 @@ h1{font-size:clamp(2.3rem,5.6vw,4.3rem);color:#fff;max-width:16ch;margin:0 auto;
 .process{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:30px}
 .process li{display:flex;gap:16px;min-width:0}
 .step{font-size:.75rem;color:var(--amber);padding-top:4px}
-.process h3{color:var(--ink);font-size:1.1rem;margin-bottom:8px}
+.process h3{color:var(--ink);font-size:1.1rem;margin-bottom:8px;margin-top:0}
 .process p{max-width:30ch;font-size:.92rem}
+
+/* ---------- Coverage grid ---------- */
+.read-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);margin-top:8px}
+.read-card{background:var(--bg);padding:30px 32px}
+.read-card h3{color:var(--ink);font-size:1.12rem;margin-bottom:10px;margin-top:0}
+.read-card p{font-size:.92rem;max-width:42ch}
+.read-card.wide{grid-column:1 / -1}
+.exhibit.alt .read-card{background:var(--bg-raised)}
+
+/* ---------- Sample output card ---------- */
+.case-card{margin-top:8px;max-width:460px;border:1px solid var(--gold-soft);background:var(--bg)}
+.exhibit.alt .case-card{background:var(--bg-raised);border-color:var(--gold-soft)}
+.case-card-head{display:flex;justify-content:space-between;align-items:center;padding:16px 22px;border-bottom:1px solid var(--line)}
+.case-card-head span{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-dim);font-family:"IBM Plex Mono",monospace}
+.case-card-body{padding:6px 22px 18px}
+.case-row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+.case-row:last-child{border-bottom:none}
+.case-row span:first-child{color:var(--ink-dim)}
+.case-row span:last-child{color:var(--ink);text-align:right}
+.case-row .confidence{color:var(--gold-bright)}
+
+/* ---------- Dossier contents list ---------- */
+.dossier-list{list-style:none;padding:0;margin:28px 0 0;display:flex;flex-direction:column;gap:20px;max-width:66ch}
+.dossier-list li{display:flex;gap:16px;align-items:baseline}
+.dossier-list .num{font-family:"IBM Plex Mono",monospace;font-size:.75rem;color:var(--amber);flex-shrink:0;padding-top:4px}
+.dossier-list div strong{color:var(--ink);font-weight:600;display:block;margin-bottom:4px}
+.dossier-list div p{margin:0;font-size:.92rem}
 
 .markets-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line)}
 .market-card{background:var(--bg);padding:38px 32px;border-top:2px solid var(--gold-soft);transition:border-color .2s}
 .market-card:hover{border-top-color:var(--gold)}
 .market-tag{display:inline-block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-soft);padding:4px 10px;margin-bottom:18px}
-.market-card h3{color:var(--ink);font-size:1.4rem;margin-bottom:12px}
+.market-card h3{color:var(--ink);font-size:1.4rem;margin-bottom:12px;margin-top:0}
 
 /* ---------- FAQ ---------- */
 .faq-list{display:flex;flex-direction:column;gap:1px;background:var(--line);max-width:860px}
 .faq-item{background:var(--bg)}
+.exhibit.alt .faq-item{background:var(--bg-raised)}
 .faq-item summary{cursor:pointer;padding:20px 24px;color:var(--ink);font-family:"Fraunces",serif;font-size:1.05rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
 .faq-item summary::-webkit-details-marker{display:none}
 .faq-item summary::after{content:"+";color:var(--gold);font-family:"IBM Plex Mono",monospace;font-size:1.2rem;flex-shrink:0}
@@ -130,6 +160,13 @@ h1{font-size:clamp(2.3rem,5.6vw,4.3rem);color:#fff;max-width:16ch;margin:0 auto;
 .form-status.visible{display:block}
 .form.is-sent .field,.form.is-sent button[type="submit"]{display:none}
 
+/* ---------- Legal (Privacy / Terms) ---------- */
+.notice{border-left:2px solid var(--amber);padding:14px 18px;margin:0 0 10px;background:var(--bg);font-size:.86rem;color:var(--ink-dim);max-width:70ch}
+.exhibit.alt .notice{background:var(--bg-raised)}
+.updated{color:var(--ink-dim);font-size:.82rem;margin:0 0 24px}
+.legal-list{padding-left:20px;margin:16px 0;max-width:72ch}
+.legal-list li{margin-bottom:6px;color:var(--ink-dim);line-height:1.7}
+
 .site-footer{padding:34px 24px;text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center}
 .site-footer p{margin:0 auto;font-size:.78rem;color:var(--ink-dim);max-width:none}
 .footer-links{display:flex;gap:20px;font-size:.78rem}
@@ -138,6 +175,8 @@ h1{font-size:clamp(2.3rem,5.6vw,4.3rem);color:#fff;max-width:16ch;margin:0 auto;
 
 @media (max-width:760px){
   .process{grid-template-columns:1fr}
+  .read-grid{grid-template-columns:1fr}
+  .read-card.wide{grid-column:auto}
   .markets-grid{grid-template-columns:1fr}
   .contact-wrap{grid-template-columns:1fr}
   .doc-types{grid-template-columns:1fr}
@@ -154,7 +193,7 @@ h1{font-size:clamp(2.3rem,5.6vw,4.3rem);color:#fff;max-width:16ch;margin:0 auto;
     <nav class="nav-links">
       <a href="#who">Who We Are</a>
       <a href="#what">What We Do</a>
-      <a href="platform.html">The Engine</a>
+      <a href="#reads">The Engine</a>
       <a href="#markets">Markets</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
@@ -201,12 +240,71 @@ h1{font-size:clamp(2.3rem,5.6vw,4.3rem);color:#fff;max-width:16ch;margin:0 auto;
         <li><span class="step">03</span><div><h3>Respond</h3><p>A complete, ready-to-send response is generated, citing the relevant provisions.</p></div></li>
         <li><span class="step">04</span><div><h3>Track</h3><p>Deadlines and delivery are tracked through to resolution — by certified mail with proof of receipt, where the jurisdiction requires it.</p></div></li>
       </ol>
-      <p style="margin-top:34px"><a href="platform.html">More on the categories it reads, and how law firms use it directly</a></p>
+      <p style="margin-top:34px"><a href="#reads">More on the categories it reads, and how law firms use it directly</a></p>
+    </div>
+  </section>
+
+  <section class="exhibit" id="reads">
+    <div class="exhibit-label"><span class="exhibit-tag">03 — What it reads</span><h2>Five categories, one engine</h2></div>
+    <div class="exhibit-body">
+      <p class="exhibit-intro">Government and institutional mail comes in a narrow number of shapes, however differently each agency dresses it up. Our engine is built around five of them — the categories that account for most of what crosses a desk, whether that desk belongs to an individual, a business, or the firm representing either.</p>
+      <div class="read-grid">
+        <div class="read-card">
+          <h3>Traffic &amp; regulatory fines</h3>
+          <p>An automated, camera-issued infraction and one written up by an officer in person run on different clocks and accept different defenses. The engine tells them apart before it drafts anything.</p>
+        </div>
+        <div class="read-card">
+          <h3>Tax &amp; assessment notices</h3>
+          <p>It lines the notice up against the filing and the records behind it, line by line, to find exactly where the two disagree — and what that disagreement is worth.</p>
+        </div>
+        <div class="read-card">
+          <h3>Contribution &amp; benefit decisions</h3>
+          <p>A demand for payment and a decision about a benefit follow entirely different appeal bodies and clocks. The engine routes each one to the right track.</p>
+        </div>
+        <div class="read-card">
+          <h3>Collection &amp; demand letters</h3>
+          <p>Before recommending that anything be paid, it checks whether the sender actually holds the power to enforce what they're asking for, and tests the underlying debt against the rules that can time it out.</p>
+        </div>
+        <div class="read-card wide">
+          <h3>Formal regulatory correspondence</h3>
+          <p>Beyond those four, agencies issue a wide range of formal notices, appeals, and procedural letters. The same discipline — read the rule, meet the deadline, cite the basis — applies across all of them.</p>
+        </div>
+      </div>
+      <p class="fine-print">Coverage varies by jurisdiction as we expand market by market — see Markets below for where we currently operate.</p>
+    </div>
+  </section>
+
+  <section class="exhibit alt" id="counsel">
+    <div class="exhibit-label"><span class="exhibit-tag">04 — Built for counsel</span><h2>Why law firms are the most direct fit</h2></div>
+    <div class="exhibit-body">
+      <p class="exhibit-intro">Most of what a firm does with a case like this is the same every time: confirm the deadline, find the defect, cite the rule that supports it. The engine runs that first pass before the file ever reaches a desk — which is what makes it, in our view, better suited to a law firm's caseload than to a single document from a single client.</p>
+
+      <div class="case-card">
+        <div class="case-card-head">
+          <span>Sample output</span>
+          <span>Collection notice</span>
+        </div>
+        <div class="case-card-body">
+          <div class="case-row"><span>Deadline</span><span>11 days remaining</span></div>
+          <div class="case-row"><span>Anomalies flagged</span><span>2 exploitable</span></div>
+          <div class="case-row"><span>Confidence</span><span class="confidence">High — citation attached</span></div>
+          <div class="case-row"><span>Draft response</span><span>Ready for review</span></div>
+        </div>
+      </div>
+
+      <ul class="dossier-list" style="margin-top:36px">
+        <li><span class="num">01</span><div><strong>The rule and the deadline</strong><p>Already identified and calculated against the date the notice was issued — not left for an associate to look up.</p></div></li>
+        <li><span class="num">02</span><div><strong>Every anomaly the engine found</strong><p>Ranked by how strong it is, so the file opens on the conclusion rather than on page one.</p></div></li>
+        <li><span class="num">03</span><div><strong>A draft response</strong><p>Citing the specific provision it relies on, ready for counsel to review, adjust, and sign.</p></div></li>
+        <li><span class="num">04</span><div><strong>The document trail behind each finding</strong><p>So a reviewing attorney can verify the work in minutes rather than reconstruct it from scratch.</p></div></li>
+      </ul>
+      <p style="margin-top:30px">That turns a stack of client mail into a set of pre-processed case files: the engine prepares, counsel decides. Nothing it produces is sent, filed, or relied upon without a person signing off on it. Firms handling volume in fines, assessments, collections, or benefits disputes use it as an intake desk — the triage happens before a biller opens the file, which leaves an attorney's time for judgment rather than paperwork.</p>
+      <p class="fine-print">Hartman &amp; Co is a software provider. We do not provide legal representation or legal advice, to firms or to the clients they represent.</p>
     </div>
   </section>
 
   <section class="exhibit" id="markets">
-    <div class="exhibit-label"><span class="exhibit-tag">03 — Markets</span><h2>Where we operate</h2></div>
+    <div class="exhibit-label"><span class="exhibit-tag">05 — Markets</span><h2>Where we operate</h2></div>
     <div class="exhibit-body markets-grid">
       <div class="market-card">
         <span class="market-tag">Established</span>
@@ -222,7 +320,7 @@ h1{font-size:clamp(2.3rem,5.6vw,4.3rem);color:#fff;max-width:16ch;margin:0 auto;
   </section>
 
   <section class="exhibit alt" id="faq">
-    <div class="exhibit-label"><span class="exhibit-tag">04 — Questions</span><h2>Frequently asked</h2></div>
+    <div class="exhibit-label"><span class="exhibit-tag">06 — Questions</span><h2>Frequently asked</h2></div>
     <div class="exhibit-body">
       <div class="faq-list">
         <details class="faq-item">
@@ -236,6 +334,10 @@ h1{font-size:clamp(2.3rem,5.6vw,4.3rem);color:#fff;max-width:16ch;margin:0 auto;
         <details class="faq-item">
           <summary>How fast is the turnaround?</summary>
           <p class="faq-a">Most documents are analyzed and a response drafted within minutes of submission. Certified mail delivery, where applicable, follows postal timelines beyond our control.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can a law firm offer this directly to its own clients?</summary>
+          <p class="faq-a">Yes. Under a partnership arrangement, firms can put the engine in front of their own clients as an intake step, with review and sign-off staying with the firm.</p>
         </details>
         <details class="faq-item">
           <summary>Which markets do you currently serve?</summary>
@@ -254,7 +356,7 @@ h1{font-size:clamp(2.3rem,5.6vw,4.3rem);color:#fff;max-width:16ch;margin:0 auto;
   </section>
 
   <section class="exhibit alt" id="contact">
-    <div class="exhibit-label"><span class="exhibit-tag">05 — Contact</span><h2>Get in touch</h2></div>
+    <div class="exhibit-label"><span class="exhibit-tag">07 — Contact</span><h2>Get in touch</h2></div>
     <div class="exhibit-body contact-wrap">
       <div class="contact-info">
         <div>
@@ -313,12 +415,98 @@ h1{font-size:clamp(2.3rem,5.6vw,4.3rem);color:#fff;max-width:16ch;margin:0 auto;
       </form>
     </div>
   </section>
+
+  <section class="exhibit" id="privacy">
+    <div class="exhibit-label"><span class="exhibit-tag">Legal</span><h2>Privacy Policy</h2></div>
+    <div class="exhibit-body">
+      <p class="updated">Last updated: [date]</p>
+      <p class="notice">This is a draft template prepared for Hartman &amp; Co LLC and has not yet been reviewed by a licensed attorney. Do not treat it as a final or compliant legal document until it has been reviewed for your jurisdiction and business practices.</p>
+
+      <h3>1. Who we are</h3>
+      <p>Hartman &amp; Co LLC ("Hartman &amp; Co," "we," "us") is a legal-technology company headquartered in Albuquerque, New Mexico, and part of the Specter &amp; Co Holdings group. This policy explains what information we collect, why, and how it is handled.</p>
+
+      <h3>2. Information we collect</h3>
+      <ul class="legal-list">
+        <li><strong>Documents you submit</strong> — the notices, fines, or correspondence you upload for analysis, and the data they contain.</li>
+        <li><strong>Contact information</strong> — name, email, company, and any message you send us through the site.</li>
+        <li><strong>Usage data</strong> — basic technical information such as browser type and pages visited, collected to keep the site working and secure.</li>
+      </ul>
+
+      <h3>3. How we use it</h3>
+      <ul class="legal-list">
+        <li>To analyze submitted documents and prepare the response you requested.</li>
+        <li>To respond to inquiries sent through our contact form.</li>
+        <li>To maintain the security and reliability of our systems.</li>
+      </ul>
+      <p>We do not sell your information, and we do not share submitted documents with third parties except where necessary to deliver the service you requested (for example, a mail-delivery provider for certified mail) or where required by law.</p>
+
+      <h3>4. Retention</h3>
+      <p>We retain submitted documents and related data only as long as necessary to deliver your response and support any follow-up you request, after which they are deleted or anonymized.</p>
+
+      <h3>5. Security</h3>
+      <p>We apply industry-standard safeguards, including encryption in transit, to protect the information you share with us. No system is completely secure, and we cannot guarantee absolute security.</p>
+
+      <h3>6. Your rights</h3>
+      <p>Depending on your location, you may have the right to access, correct, or request deletion of your personal information. To make a request, contact us using the details in <a href="#contact">Contact</a>.</p>
+
+      <h3>7. Changes to this policy</h3>
+      <p>We may update this policy from time to time. Material changes will be reflected by updating the date at the top of this section.</p>
+
+      <h3>8. Contact</h3>
+      <p>Questions about this policy can be sent to the email address listed in <a href="#contact">Contact</a>.</p>
+    </div>
+  </section>
+
+  <section class="exhibit alt" id="terms">
+    <div class="exhibit-label"><span class="exhibit-tag">Legal</span><h2>Terms of Service</h2></div>
+    <div class="exhibit-body">
+      <p class="updated">Last updated: [date]</p>
+      <p class="notice">This is a draft template prepared for Hartman &amp; Co LLC and has not yet been reviewed by a licensed attorney. Do not treat it as a final or compliant legal document until it has been reviewed for your jurisdiction and business practices.</p>
+
+      <h3>1. Acceptance of terms</h3>
+      <p>By accessing or using the Hartman &amp; Co website and services, you agree to these Terms of Service. If you do not agree, do not use the service.</p>
+
+      <h3>2. Description of service</h3>
+      <p>Hartman &amp; Co provides software that analyzes administrative and regulatory documents and generates written responses based on the rules that apply to the information provided. Hartman &amp; Co is a software provider, not a law firm. Using the service does not create an attorney-client relationship, and nothing produced through the service constitutes legal advice.</p>
+
+      <h3>3. No legal advice</h3>
+      <p>Outputs generated by Hartman &amp; Co are informational documents prepared from the information you provide. They are not a substitute for advice from a licensed attorney. For matters requiring legal representation or advice specific to your situation, consult a qualified attorney in your jurisdiction.</p>
+
+      <h3>4. Your responsibilities</h3>
+      <ul class="legal-list">
+        <li>You are responsible for the accuracy of the documents and information you submit.</li>
+        <li>You are responsible for reviewing any generated response before it is sent or relied upon.</li>
+        <li>You agree not to use the service for unlawful purposes or to submit documents you do not have the right to share.</li>
+      </ul>
+
+      <h3>5. Fees</h3>
+      <p>Fees, where applicable, are disclosed before you commit to a paid service and are subject to change with notice.</p>
+
+      <h3>6. Disclaimers</h3>
+      <p>The service is provided "as is," without warranties of any kind, express or implied. We do not guarantee any particular outcome from a submitted document, notice, or administrative or legal proceeding.</p>
+
+      <h3>7. Limitation of liability</h3>
+      <p>To the maximum extent permitted by law, Hartman &amp; Co LLC and Specter &amp; Co Holdings shall not be liable for indirect, incidental, or consequential damages arising from use of the service.</p>
+
+      <h3>8. Termination</h3>
+      <p>We may suspend or terminate access to the service for conduct that violates these terms or is harmful to other users or to Hartman &amp; Co.</p>
+
+      <h3>9. Governing law</h3>
+      <p>These terms are governed by the laws of the State of New Mexico, without regard to its conflict-of-law principles.</p>
+
+      <h3>10. Changes to these terms</h3>
+      <p>We may update these terms from time to time. Continued use of the service after changes take effect constitutes acceptance of the revised terms.</p>
+
+      <h3>11. Contact</h3>
+      <p>Questions about these terms can be sent to the email address listed in <a href="#contact">Contact</a>.</p>
+    </div>
+  </section>
 </main>
 
 <footer class="site-footer">
   <div class="footer-links">
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms of Service</a>
+    <a href="#privacy">Privacy Policy</a>
+    <a href="#terms">Terms of Service</a>
   </div>
   <p>© <span id="year"></span> Hartman &amp; Co LLC. A Specter &amp; Co Holdings company.</p>
 </footer>
